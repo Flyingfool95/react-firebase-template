@@ -1,0 +1,42 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: var(--line-height-heading);
+    font-family: var(--font-family-heading);
+}
+
+h1 {
+    font-size: var(--font-size-heading-1);
+}
+h2 {
+    font-size: var(--font-size-heading-2);
+}
+h3 {
+    font-size: var(--font-size-heading-3);
+}
+h4 {
+    font-size: var(--font-size-heading-4);
+}
+h5 {
+    font-size: var(--font-size-heading-5);
+}
+h6 {
+    font-size: var(--font-size-heading-6);
+}
+
+p {
+    font-size: var(--font-size-body);
+}
+
+p,
+span,
+label,
+input,
+button,
+a {
+    line-height: var(--line-height-body);
+    font-family: var(--font-family-body);
+}

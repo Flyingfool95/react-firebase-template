@@ -1,0 +1,77 @@
+:root {
+    /* Sizes */
+    --size-base: 18px;
+    --size-1: calc(var(--size-base) * 0.125);
+    --size-2: calc(var(--size-base) * 0.25);
+    --size-3: calc(var(--size-base) * 0.375);
+    --size-4: calc(var(--size-base) * 0.5);
+    --size-5: calc(var(--size-base) * 0.75);
+    --size-6: calc(var(--size-base) * 1);
+    --size-7: calc(var(--size-base) * 1.5);
+    --size-8: calc(var(--size-base) * 2);
+    --size-9: calc(var(--size-base) * 2.5);
+    --size-10: calc(var(--size-base) * 3);
+    --size-11: calc(var(--size-base) * 4);
+    --size-12: calc(var(--size-base) * 5);
+    --size-13: calc(var(--size-base) * 6);
+    --size-14: calc(var(--size-base) * 8);
+    --size-15: calc(var(--size-base) * 10);
+    --size-16: calc(var(--size-base) * 12);
+    --size-17: calc(var(--size-base) * 15);
+    --size-18: calc(var(--size-base) * 18);
+    --size-19: calc(var(--size-base) * 21);
+    --size-20: calc(var(--size-base) * 25);
+    --size-21: calc(var(--size-base) * 30);
+    --size-22: calc(var(--size-base) * 35);
+    --size-23: calc(var(--size-base) * 45);
+    --size-24: calc(var(--size-base) * 60);
+    --size-25: calc(var(--size-base) * 80);
+
+    /* Colors */
+    --color-primary-1: #fef2f2;
+    --color-primary-2: #fecaca;
+    --color-primary-3: #f87171;
+    --color-primary-4: #ef4444;
+    --color-primary-5: #dc2626;
+    --color-primary-6: #991b1b;
+    --color-primary-7: #450a0a;
+
+    --color-accent-1: #eff6ff;
+    --color-accent-2: #bfdbfe;
+    --color-accent-3: #60a5fa;
+    --color-accent-4: #3b82f6;
+    --color-accent-5: #2563eb;
+    --color-accent-6: #1e40af;
+    --color-accent-7: #172554;
+
+    --color-neutral-1: #fafafa;
+    --color-neutral-2: #e5e5e5;
+    --color-neutral-3: #a3a3a3;
+    --color-neutral-4: #737373;
+    --color-neutral-5: #525252;
+    --color-neutral-6: #262626;
+    --color-neutral-7: #0a0a0a;
+
+    /* Break points */
+    --break-point-small: calc(var(--base-size) * 36);
+    --break-point-medium: calc(var(--base-size) * 48);
+    --break-point-large: calc(var(--base-size) * 62);
+    --break-point-xl: calc(var(--base-size) * 75);
+
+    /* Typography */
+    --font-family-heading: "Georgia", serif;
+    --font-family-body: "Helvetica Neue", Arial, sans-serif;
+
+    --line-height-heading: 1.2;
+    --line-height-body: 1.6;
+
+    --font-size-heading-1: var(--size-11);
+    --font-size-heading-2: var(--size-10);
+    --font-size-heading-3: var(--size-9);
+    --font-size-heading-4: var(--size-8);
+    --font-size-heading-5: var(--size-7);
+    --font-size-heading-6: var(--size-6);
+
+    --font-size-body: var(--size-6);
+    --font-size-small: var(--size-5);
+}
