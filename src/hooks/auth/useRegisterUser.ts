@@ -1,12 +1,13 @@
-export default function useRegisterUser() {
-    interface TRegisterFormData {
-        email: string;
-        password: string;
-        confirmPassword: string;
-    }
+import { createUserWithEmailAndPassword } from "firebase/auth/cordova";
+import { auth } from "../../services/firebase/firebase";
 
-    const registerUser = async (registerFormData: TRegisterFormData) => {
+export default function useRegisterUser() {
+    const registerUser = async (email: string, password: string, confirmPassword: string) => {
+        if (!email || !password || !confirmPassword) return console.error("All fields must be filled");
+        if (password !== confirmPassword) return console.error("Passwords must match");
+
         try {
+            await createUserWithEmailAndPassword(auth, email, password);
         } catch (error) {}
     };
 
