@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router";
+import { auth } from "./services/firebase/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 import Register from "./routes/auth/Register";
 import Login from "./routes/auth/Login";
-import AuthLayout from "./routes/auth/layouts/AuthLayout";
 import Dashboard from "./routes/dashboard/Dashboard";
-import ProtectedLayout from "./routes/auth/layouts/ProtectedLayout";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "./services/firebase/firebase";
+import AuthLayout from "./components/layouts/AuthLayout";
+import ProtectedLayout from "./components/layouts/ProtectedLayout";
 
 function App() {
     const [user, loading, error] = useAuthState(auth);
