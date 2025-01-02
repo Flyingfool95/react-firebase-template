@@ -1,9 +1,9 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/firebase/firebase";
-import useValidateAuthform from "../shared/useValidateAuthForm";
+import useValidateRegisterForm from "./useValidateRegisterForm";
 
 export default function useRegisterUser() {
-    const { validateAuthForm } = useValidateAuthform();
+    const { validateRegisterForm } = useValidateRegisterForm();
 
     const registerUser = async (email: string, password: string) => {
         try {
@@ -20,7 +20,7 @@ export default function useRegisterUser() {
         const password = formData.get("password") as string;
         const confirmPassword = formData.get("confirmPassword") as string;
 
-        if (!validateAuthForm(email, password, confirmPassword)) return;
+        if (!validateRegisterForm(email, password, confirmPassword)) return;
 
         await registerUser(email, password);
     };

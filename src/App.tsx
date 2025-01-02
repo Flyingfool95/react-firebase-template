@@ -1,19 +1,37 @@
-import useRegisterUser from "./hooks/auth/useRegisterUser";
+import { Routes, Route } from "react-router";
+import Register from "./routes/auth/Register";
+import Login from "./routes/auth/Login";
+import AuthLayout from "./routes/auth/layouts/AuthLayout";
+import Dashboard from "./routes/dashboard/Dashboard";
+import ProtectedLayout from "./routes/auth/layouts/ProtectedLayout";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./services/firebase/firebase";
 
 function App() {
-    const { handleRegister } = useRegisterUser();
+    const [user, loading, error] = useAuthState(auth);
 
     return (
-        <>
-            <h1>React Firebase Template</h1>
+        <div className="app">
+            <Routes>
+                <Route element={<AuthLayout loading={loading} user={user} />}>
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/login" element={<Login />} />
+                </Route>
 
-            <form onSubmit={(e) => handleRegister(e)}>
-                <input type="email" name="email" id="email" />
-                <input type="password" name="password" id="password" />
-                <input type="password" name="confirmPassword" id="confirmPassword" />
-                <input type="submit" value="Register" />
-            </form>
-        </>
+                <Route element={<ProtectedLayout loading={loading} user={user} />}>
+                    <Route path="/" element={<Dashboard />} />
+                </Route>
+
+                <Route
+                    path="*"
+                    element={
+                        <div>
+                            <h1>404</h1>
+                        </div>
+                    }
+                />
+            </Routes>
+        </div>
     );
 }
 
