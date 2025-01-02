@@ -6,6 +6,7 @@ export default function useLoginUser() {
     const { validateLoginForm } = useValidateLoginForm();
 
     const loginUser = async (email: string, password: string) => {
+        /* Change with hook from react firebase hooks */
         try {
             await signInWithEmailAndPassword(auth, email, password);
         } catch (error) {

@@ -5,7 +5,7 @@ export default function AuthLayout({ loading, user }: { loading: boolean; user: 
     if (loading) return <div>Loading...</div>;
 
     if (!user) {
-        return <Navigate to="/" />;
+        return <Navigate to="/login" />;
     }
 
     return <Outlet />;

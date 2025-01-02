@@ -5,7 +5,7 @@ export default function ProtectedLayout({ loading, user }: { loading: boolean; u
     if (loading) return <div>Loading...</div>;
 
     if (user) {
-        return <Navigate to="/login" />;
+        return <Navigate to="/" />;
     }
 
     return <Outlet />;

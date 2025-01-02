@@ -1,19 +1,12 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/firebase/firebase";
 import useValidateRegisterForm from "./useValidateRegisterForm";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 export default function useRegisterUser() {
     const { validateRegisterForm } = useValidateRegisterForm();
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
 
-    const registerUser = async (email: string, password: string) => {
-        try {
-            await createUserWithEmailAndPassword(auth, email, password);
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    const handleRegister = async (e: any) => {
+    const handleRegister = (e: any) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const email = formData.get("email") as string;
@@ -22,7 +15,7 @@ export default function useRegisterUser() {
 
         if (!validateRegisterForm(email, password, confirmPassword)) return;
 
-        await registerUser(email, password);
+        createUserWithEmailAndPassword(email, password);
     };
 
     return {
