@@ -4,7 +4,7 @@ import { User } from "firebase/auth";
 export default function ProtectedLayout({ loading, user }: { loading: boolean; user: User | null | undefined}) {
     if (loading) return <div>Loading...</div>;
 
-    if (!user) {
+    if (user) {
         return <Navigate to="/login" />;
     }
 

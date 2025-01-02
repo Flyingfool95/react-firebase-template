@@ -13,12 +13,16 @@ function App() {
     return (
         <div className="app">
             <Routes>
-                <Route element={<AuthLayout loading={loading} user={user} />}>
+                {/* Public routes */}
+
+                {/* Routes protected from loggedin users */}
+                <Route element={<ProtectedLayout loading={loading} user={user} />}>
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                 </Route>
 
-                <Route element={<ProtectedLayout loading={loading} user={user} />}>
+                {/* Auth routes */}
+                <Route element={<AuthLayout loading={loading} user={user} />}>
                     <Route path="/" element={<Dashboard />} />
                 </Route>
 
