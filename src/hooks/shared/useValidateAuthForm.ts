@@ -1,6 +1,5 @@
-export default function useValidateAuthform() {
+export default function useValidateAuthform(MIN_PASSWORD_LENGTH = 8) {
     const validateAuthForm = (email: string, password: string, confirmPassword: string) => {
-        const MIN_PASSWORD_LENGTH = 8;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!email || !password || !confirmPassword) {
