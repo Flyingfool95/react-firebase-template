@@ -1,10 +1,13 @@
-import { auth } from "../../services/firebase/firebase";
+import { auth } from "../../../services/firebase/firebase";
 import useValidateRegisterForm from "./useValidateRegisterForm";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 export default function useRegisterUser() {
     const { validateRegisterForm } = useValidateRegisterForm();
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+    if (error) {
+        console.log(error.message);
+    }
 
     const handleRegister = (e: any) => {
         e.preventDefault();

@@ -1,5 +1,5 @@
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
-import { auth } from "../../services/firebase/firebase";
+import { auth } from "../../../services/firebase/firebase";
 import { useNavigate } from "react-router";
 
 export default function Dashboard() {

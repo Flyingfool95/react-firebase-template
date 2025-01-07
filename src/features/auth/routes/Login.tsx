@@ -1,4 +1,4 @@
-import useLoginUser from "../../hooks/auth/useLoginUser";
+import useLoginUser from "../hooks/useLoginUser";
 
 export default function Login() {
     const { handleLogin } = useLoginUser();

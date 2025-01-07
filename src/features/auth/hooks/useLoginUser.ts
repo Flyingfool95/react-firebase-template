@@ -1,5 +1,5 @@
+import { auth } from "../../../services/firebase/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../services/firebase/firebase";
 import useValidateLoginForm from "./useValidateLoginForm";
 
 export default function useLoginUser() {
