@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import useLoginUser from "../hooks/useLoginUser";
 
 export default function Login() {
@@ -10,6 +11,7 @@ export default function Login() {
                 <input type="password" name="password" id="password" />
                 <input type="submit" value="Login" />
             </form>
+            <Link to={"/register"}>Register here!</Link>
         </>
     );
 }

@@ -11,19 +11,27 @@ import Register from "./features/auth/routes/Register";
 function App() {
     const [user, loading, error] = useAuthState(auth);
 
+    if (error) {
+        <div>Error: {error.message}</div>;
+    }
+    
+    if (!user && loading) {
+        <div>Loading...</div>;
+    }
+
     return (
         <div className="app">
             <Routes>
                 {/* Public routes */}
 
                 {/* Routes protected from loggedin users */}
-                <Route element={<ProtectedLayout loading={loading} user={user} />}>
+                <Route element={<ProtectedLayout user={user} />}>
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                 </Route>
 
                 {/* Auth routes */}
-                <Route element={<AuthLayout loading={loading} user={user} />}>
+                <Route element={<AuthLayout user={user} />}>
                     <Route path="/" element={<Dashboard />} />
                 </Route>
 

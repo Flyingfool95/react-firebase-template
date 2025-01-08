@@ -1,4 +1,5 @@
-import useRegisterUser from "../../hooks/auth/useRegisterUser";
+import { Link } from "react-router";
+import useRegisterUser from "../hooks/useRegisterUser";
 
 export default function Register() {
     const { handleRegister } = useRegisterUser();
@@ -11,6 +12,7 @@ export default function Register() {
                 <input type="password" name="confirmPassword" id="confirmPassword" />
                 <input type="submit" value="Register" />
             </form>
+            <Link to={"/login"}>Login here!</Link>
         </main>
     );
 }
