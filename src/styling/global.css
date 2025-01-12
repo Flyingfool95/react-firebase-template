@@ -56,7 +56,8 @@ form {
     display: flex;
     flex-direction: column;
     gap: var(--size-4);
-    max-width: var(--size-20);
+    width: 100%;
+    max-width: var(--size-17);
     margin: auto;
 
     label {
