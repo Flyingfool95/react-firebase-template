@@ -1,0 +1,5 @@
+Todo
+1. Add a zustand global store
+2. Add Toast component
+3. Add reveal password functionality to password inputs
+4. Add Navbar
