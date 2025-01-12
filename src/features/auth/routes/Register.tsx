@@ -15,7 +15,8 @@ export default function Register() {
     }
 
     if (loading) {
-        //Set global state isLoading to true
+        //Use Supsense to handle loading state
+        //    throw new Promise(() => {});
         console.log("Loading...");
     }
 
