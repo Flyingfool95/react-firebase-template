@@ -18,9 +18,15 @@ export default function Login() {
         console.log("Loading...");
     }
 
+    const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        
+        signInWithEmailAndPassword(email, password);
+    };
+
     return (
         <main>
-            <form onSubmit={() => signInWithEmailAndPassword(email, password)}>
+            <form onSubmit={(e) => handleLogin(e)}>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="submit" value={"Sign In"} />

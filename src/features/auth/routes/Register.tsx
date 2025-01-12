@@ -18,12 +18,24 @@ export default function Register() {
         console.log("Loading...");
     }
 
+    const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        
+        createUserWithEmailAndPassword(email, password);
+    };
+
     return (
-        <div className="App">
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <input type="password" value={confirmedPassword} onChange={(e) => setConfirmedPassword(e.target.value)} />
-            <button onClick={() => createUserWithEmailAndPassword(email, password)}>Register</button>
-        </div>
+        <main className="register">
+            <form onSubmit={(e) => handleRegister(e)}>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input
+                    type="password"
+                    value={confirmedPassword}
+                    onChange={(e) => setConfirmedPassword(e.target.value)}
+                />
+                <input type="submit" value={"Register"} />
+            </form>
+        </main>
     );
 }
