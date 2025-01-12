@@ -9,10 +9,13 @@ export default function Login() {
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
     if (error) {
+        //Add error to toast
         console.error(error);
     }
+
     if (loading) {
-        return <p>Loading...</p>;
+        //Set global state isLoading to true
+        console.log("Loading...");
     }
 
     return (
