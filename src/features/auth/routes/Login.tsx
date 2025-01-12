@@ -37,7 +37,7 @@ export default function Login() {
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </label>
                 <input type="submit" value={"Sign In"} />
-                <Link to={"/register"}>Register new user here!</Link>
+                <Link to={"/register"}>Register here!</Link>
             </form>
         </main>
     );
