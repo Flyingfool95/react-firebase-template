@@ -1,8 +1,8 @@
 import { Link } from "react-router";
-import useRegisterUser from "../hooks/useRegisterUser";
+import useHandleRegisterUser from "../hooks/useHandleRegisterUser";
 
 export default function Register() {
-    const { handleRegister } = useRegisterUser();
+    const { handleRegister } = useHandleRegisterUser();
 
     return (
         <main>

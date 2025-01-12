@@ -2,7 +2,7 @@ import { auth } from "../../../services/firebase/firebase";
 import useValidateRegisterForm from "./useValidateRegisterForm";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
-export default function useRegisterUser() {
+export default function useHandleRegisterUser() {
     const { validateRegisterForm } = useValidateRegisterForm();
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
     if (error) {

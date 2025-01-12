@@ -2,7 +2,7 @@ import { auth } from "../../../services/firebase/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import useValidateLoginForm from "./useValidateLoginForm";
 
-export default function useLoginUser() {
+export default function useHandleLoginUser() {
     const { validateLoginForm } = useValidateLoginForm();
 
     const loginUser = async (email: string, password: string) => {

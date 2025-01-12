@@ -1,8 +1,8 @@
 import { Link } from "react-router";
-import useLoginUser from "../hooks/useLoginUser";
+import useHandleLoginUser from "../hooks/useHandleLoginUser";
 
 export default function Login() {
-    const { handleLogin } = useLoginUser();
+    const { handleLogin } = useHandleLoginUser();
 
     return (
         <>
