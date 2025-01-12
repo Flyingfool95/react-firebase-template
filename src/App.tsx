@@ -20,7 +20,7 @@ function App() {
     }
 
     return (
-        <div className="app">
+        <>
             <Routes>
                 {/* Public routes */}
 
@@ -44,7 +44,7 @@ function App() {
                     }
                 />
             </Routes>
-        </div>
+        </>
     );
 }
 

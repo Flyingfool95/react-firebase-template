@@ -1,5 +1,12 @@
-body{
+main {
     padding: var(--size-6);
+    min-height: 100vh;
+
+    &.login,
+    &.register {
+        display: grid;
+        place-items: center;
+    }
 }
 
 h1,
@@ -43,4 +50,17 @@ button,
 a {
     line-height: var(--line-height-body);
     font-family: var(--font-family-body);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-4);
+    max-width: var(--size-20);
+    margin: auto;
+
+    label {
+        display: flex;
+        flex-direction: column;
+    }
 }

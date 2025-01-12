@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { auth } from "../../../services/firebase/firebase";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { Link } from "react-router";
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -20,16 +21,23 @@ export default function Login() {
 
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        
+
         signInWithEmailAndPassword(email, password);
     };
 
     return (
-        <main>
+        <main className="login">
             <form onSubmit={(e) => handleLogin(e)}>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <label>
+                    Email
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                </label>
+                <label>
+                    Password
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                </label>
                 <input type="submit" value={"Sign In"} />
+                <Link to={"/register"}>Register new user here!</Link>
             </form>
         </main>
     );
