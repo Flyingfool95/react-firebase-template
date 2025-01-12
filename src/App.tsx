@@ -14,8 +14,8 @@ function App() {
     if (error) {
         <div>Error: {error.message}</div>;
     }
-    
-    if (!user && loading) {
+
+    if (loading) {
         <div>Loading...</div>;
     }
 
