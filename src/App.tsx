@@ -29,34 +29,13 @@ function App() {
 
                 {/* Routes protected from loggedin users */}
                 <Route element={<ProtectedLayout user={user} />}>
-                    <Route
-                        path="/register"
-                        element={
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <Register />
-                            </Suspense>
-                        }
-                    />
-                    <Route
-                        path="/login"
-                        element={
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <Login />
-                            </Suspense>
-                        }
-                    />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/login" element={<Login />} />
                 </Route>
 
                 {/* Auth routes */}
                 <Route element={<AuthLayout user={user} />}>
-                    <Route
-                        path="/"
-                        element={
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <Dashboard />
-                            </Suspense>
-                        }
-                    />
+                    <Route path="/" element={<Dashboard />} />
                 </Route>
 
                 <Route

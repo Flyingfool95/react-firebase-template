@@ -15,7 +15,6 @@ export default function Login() {
     }
 
     if (loading) {
-        //Use Supsense to handle loading state
         throw new Promise(() => {});
     }
 

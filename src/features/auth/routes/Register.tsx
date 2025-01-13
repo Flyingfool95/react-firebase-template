@@ -15,7 +15,6 @@ export default function Register() {
     }
 
     if (loading) {
-        //Use Supsense to handle loading state
         throw new Promise(() => {});
     }
 
