@@ -16,8 +16,7 @@ export default function Register() {
 
     if (loading) {
         //Use Supsense to handle loading state
-        //    throw new Promise(() => {});
-        console.log("Loading...");
+        throw new Promise(() => {});
     }
 
     const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {

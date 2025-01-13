@@ -1,12 +1,15 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router";
 import { auth } from "./services/firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-import Dashboard from "./features/dashboard/routes/Dashboard";
-import AuthLayout from "./features/auth/components/layouts/AuthLayout";
-import ProtectedLayout from "./features/auth/components/layouts/ProtectedLayout";
+/* Public routes */
 import Login from "./features/auth/routes/Login";
 import Register from "./features/auth/routes/Register";
+/* Auth routes */
+const Dashboard = lazy(() => import("./features/dashboard/routes/Dashboard"));
+const AuthLayout = lazy(() => import("./features/auth/components/layouts/AuthLayout"));
+const ProtectedLayout = lazy(() => import("./features/auth/components/layouts/ProtectedLayout"));
 
 function App() {
     const [user, loading, error] = useAuthState(auth);
@@ -26,13 +29,34 @@ function App() {
 
                 {/* Routes protected from loggedin users */}
                 <Route element={<ProtectedLayout user={user} />}>
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/login" element={<Login />} />
+                    <Route
+                        path="/register"
+                        element={
+                            <Suspense fallback={<div>Loading... 123</div>}>
+                                <Register />
+                            </Suspense>
+                        }
+                    />
+                    <Route
+                        path="/login"
+                        element={
+                            <Suspense fallback={<div>Loading... 123</div>}>
+                                <Login />
+                            </Suspense>
+                        }
+                    />
                 </Route>
 
                 {/* Auth routes */}
                 <Route element={<AuthLayout user={user} />}>
-                    <Route path="/" element={<Dashboard />} />
+                    <Route
+                        path="/"
+                        element={
+                            <Suspense fallback={<div>Loading... 123</div>}>
+                                <Dashboard />
+                            </Suspense>
+                        }
+                    />
                 </Route>
 
                 <Route

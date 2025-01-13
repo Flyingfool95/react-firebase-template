@@ -16,8 +16,7 @@ export default function Login() {
 
     if (loading) {
         //Use Supsense to handle loading state
-        //    throw new Promise(() => {});
-        console.log("Loading...");
+        throw new Promise(() => {});
     }
 
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
