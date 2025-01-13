@@ -6,3 +6,4 @@ Todo
 2. Add Toast component
 3. Add reveal password functionality to password inputs
 4. Add Navbar
+5. Testing
