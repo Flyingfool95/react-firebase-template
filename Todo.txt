@@ -1,6 +1,5 @@
 Todo
 1. Add a zustand global store
-    - Loading
     - Toast
     - 
 2. Add Toast component
