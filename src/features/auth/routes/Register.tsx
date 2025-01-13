@@ -1,32 +1,17 @@
 import { useState } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { auth } from "../../../services/firebase/firebase";
 import { Link } from "react-router";
+import useHandleRegister from "../hooks/useHandleRegister";
 
 export default function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmedPassword, setConfirmedPassword] = useState("");
-    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
 
-    if (error) {
-        //Add error to toast
-        console.error(error);
-    }
-
-    if (loading) {
-        throw new Promise(() => {});
-    }
-
-    const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-        createUserWithEmailAndPassword(email, password);
-    };
+    const { handleRegister } = useHandleRegister();
 
     return (
         <main className="register">
-            <form onSubmit={(e) => handleRegister(e)}>
+            <form onSubmit={(e) => handleRegister(e, email, password, confirmedPassword)}>
                 <label>
                     Email
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />

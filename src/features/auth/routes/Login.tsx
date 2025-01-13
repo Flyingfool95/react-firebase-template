@@ -1,32 +1,16 @@
 import { useState } from "react";
-import { auth } from "../../../services/firebase/firebase";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router";
+import useHandleLogin from "../hooks/useHandleLogin";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
-
-    if (error) {
-        //Add error to toast
-        console.error(error);
-    }
-
-    if (loading) {
-        throw new Promise(() => {});
-    }
-
-    const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-        signInWithEmailAndPassword(email, password);
-    };
+    const { handleLogin } = useHandleLogin();
 
     return (
         <main className="login">
-            <form onSubmit={(e) => handleLogin(e)}>
+            <form onSubmit={(e) => handleLogin(e, email, password)}>
                 <label>
                     Email
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
