@@ -6,3 +6,4 @@ Todo
 3. Add reveal password functionality to password inputs
 4. Add Navbar
 5. Testing
+6. Refactor validation hooks into helper functions
