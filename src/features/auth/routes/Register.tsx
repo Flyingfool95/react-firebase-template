@@ -12,17 +12,23 @@ export default function Register() {
     return (
         <main className="register">
             <form onSubmit={(e) => handleRegister(e, email, password, confirmedPassword)}>
-                <label>
+                <label htmlFor="email">
                     Email
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </label>
-                <label>
+                <label htmlFor="password">
                     Password
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input
+                        id="password"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
                 </label>
-                <label>
+                <label htmlFor="confirmPassword">
                     Confirm Password
                     <input
+                        id="confirmPassword"
                         type="password"
                         value={confirmedPassword}
                         onChange={(e) => setConfirmedPassword(e.target.value)}

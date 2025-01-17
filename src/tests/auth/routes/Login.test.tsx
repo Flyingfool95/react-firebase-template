@@ -20,14 +20,14 @@ describe("Login page", () => {
         expect(passwordInput.value).toBe("password123");
     });
 
-    it("should render a link to register page", () => {
+    it("should render a link to Register page", () => {
         render(
             <MemoryRouter>
                 <Login />
             </MemoryRouter>
         );
 
-        const registerLink = screen.getByRole("link", { name: /Register here!/i }) as HTMLInputElement;
+        const registerLink = screen.getByRole("link", { name: /register/i }) as HTMLInputElement;
 
         expect(registerLink).toBeInTheDocument();
 
