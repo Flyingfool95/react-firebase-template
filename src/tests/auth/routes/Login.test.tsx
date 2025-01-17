@@ -1,9 +1,8 @@
-import { it, expect, describe } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import Login from "../../../features/auth/routes/Login";
 import { MemoryRouter } from "react-router";
 
-describe("Login", () => {
+describe("Login page", () => {
     it("should update state on input change", () => {
         render(
             <MemoryRouter>
@@ -19,5 +18,19 @@ describe("Login", () => {
 
         expect(emailInput.value).toBe("test@mail.com");
         expect(passwordInput.value).toBe("password123");
+    });
+
+    it("should render a link to register page", () => {
+        render(
+            <MemoryRouter>
+                <Login />
+            </MemoryRouter>
+        );
+
+        const registerLink = screen.getByRole("link", { name: /Register here!/i }) as HTMLInputElement;
+
+        expect(registerLink).toBeInTheDocument();
+
+        expect(registerLink).toHaveAttribute("href", "/register");
     });
 });
