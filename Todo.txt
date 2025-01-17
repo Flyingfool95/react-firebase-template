@@ -6,4 +6,12 @@ Todo
 3. Add reveal password functionality to password inputs
 4. Add Navbar
 5. Testing
+    - Components:
+        - Login: X
+        - Register: X
+    - Hooks
+        - useHandleLogin
+        - useHandleRegister
+    - Functions
+        - ValidateForm
 6. Refactor validation hooks into helper functions
