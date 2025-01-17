@@ -1,6 +1,6 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import Login from "../../../features/auth/routes/Login";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
+import Login from "../../../features/auth/routes/Login";
 
 describe("Login page", () => {
     it("should update state on input change", () => {
