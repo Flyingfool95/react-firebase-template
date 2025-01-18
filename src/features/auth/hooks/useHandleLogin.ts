@@ -1,10 +1,9 @@
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "../../../services/firebase/firebase";
-import useValidateLoginForm from "./useValidateLoginForm";
+import validateAuthForm from "../../../utils/validateAuthForm";
 
 export default function useHandleLogin() {
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
-    const { validateLoginForm } = useValidateLoginForm();
     if (error) {
         //Add error to toast
         console.error(error);
@@ -16,7 +15,9 @@ export default function useHandleLogin() {
 
     const handleLogin = (e: React.FormEvent<HTMLFormElement>, email: string, password: string) => {
         e.preventDefault();
-        validateLoginForm(email, password);
+
+        if (!validateAuthForm("login", { email, password })) return;
+        
         signInWithEmailAndPassword(email, password);
     };
 
