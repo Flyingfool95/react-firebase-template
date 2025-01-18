@@ -1,4 +1,3 @@
-Todo
 1. Add a zustand global store
     - Toast
     - 
@@ -14,4 +13,3 @@ Todo
         - useHandleRegister
     - Functions
         - ValidateForm
-6. Refactor validation hooks into helper functions
